@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Box plot of Australian daytrip expenditure by state.",
   "data": {
-    "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/daytrip_scatter.csv",
+    "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/daytrip_scatter.csv",
     "format": {
       "type": "csv",
       "parse": {
