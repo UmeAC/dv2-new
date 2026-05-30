@@ -8,7 +8,7 @@
     "fontWeight": "bold"
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/expenditure.csv"
+    "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/expenditure.csv"
   },
   "transform": [
     {
