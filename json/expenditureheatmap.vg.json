@@ -1,0 +1,97 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 400,
+  "width": "container",
+  "title": {
+    "text": "Australia Daytrip Expenditure by State & Period ($M)",
+    "fontSize": 16,
+    "fontWeight": "bold"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/expenditure.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.state !== 'Australia'"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rect"
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "title": "Period",
+          "sort": [
+            "YE December 2019","YE March 2020","YE June 2020","YE September 2020",
+            "YE December 2020","YE March 2021","YE June 2021","YE September 2021",
+            "YE December 2021","YE March 2022","YE June 2022","YE September 2022",
+            "YE December 2022","YE March 2023","YE June 2023","YE September 2023",
+            "YE December 2023","YE March 2024","YE June 2024","YE September 2024",
+            "YE December 2024","YE March 2025","YE June 2025"
+          ],
+          "axis": {
+            "labelAngle": -45,
+            "labelFontSize": 10
+          }
+        },
+        "y": {
+          "field": "state",
+          "type": "ordinal",
+          "title": "State",
+          "sort": [
+            "New South Wales","Victoria","Queensland",
+            "Western Australia","South Australia","Tasmania","ACT","Northern Territory"
+          ]
+        },
+        "color": {
+          "field": "expenditure",
+          "type": "quantitative",
+          "title": "Expenditure ($M)",
+          "scale": {"scheme": "purples"},
+          "legend": {"orient": "right"}
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "period", "type": "nominal", "title": "Period"},
+          {"field": "expenditure", "type": "quantitative", "title": "Expenditure ($M)", "format": ",.2f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 9,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": [
+            "YE December 2019","YE March 2020","YE June 2020","YE September 2020",
+            "YE December 2020","YE March 2021","YE June 2021","YE September 2021",
+            "YE December 2021","YE March 2022","YE June 2022","YE September 2022",
+            "YE December 2022","YE March 2023","YE June 2023","YE September 2023",
+            "YE December 2023","YE March 2024","YE June 2024","YE September 2024",
+            "YE December 2024","YE March 2025","YE June 2025"
+          ]
+        },
+        "y": {
+          "field": "state",
+          "type": "ordinal",
+          "sort": [
+            "New South Wales","Victoria","Queensland",
+            "Western Australia","South Australia","Tasmania","ACT","Northern Territory"
+          ]
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null}
+  }
+}
