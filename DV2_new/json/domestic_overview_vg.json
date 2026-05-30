@@ -1,0 +1,133 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Australia Domestic Tourism Overview (2019–2030)",
+    "subtitle": "Click a metric pill to highlight. Hover dots for exact values. Dashed = forecast from 2025.",
+    "fontSize": 15, "subtitleFontSize": 11, "subtitleColor": "#888",
+    "fontWeight": "bold", "anchor": "start"
+  },
+  "width": 680, "height": 340,
+  "data": {
+    "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/domestic_overview.csv",
+    "format": { "type": "csv", "parse": { "year": "number", "daytrips": "number", "overnight_total": "number", "spend_total_real": "number", "nights": "number" } }
+  },
+  "transform": [
+    { "calculate": "datum.daytrips / 1000", "as": "daytrips_m" },
+    { "calculate": "datum.overnight_total / 1000", "as": "overnight_m" },
+    { "calculate": "datum.nights / 1000", "as": "nights_m" },
+    { "fold": ["daytrips_m", "overnight_m", "nights_m"], "as": ["metric", "value"] },
+    { "calculate": "datum.metric === 'daytrips_m' ? 'Day Trips (M)' : datum.metric === 'overnight_m' ? 'Overnight Trips (M)' : 'Nights Away (M)'", "as": "metric_label" }
+  ],
+  "params": [
+    {
+      "name": "metric_select",
+      "value": "Day Trips (M)",
+      "bind": {
+        "input": "radio",
+        "options": ["Day Trips (M)", "Overnight Trips (M)", "Nights Away (M)"],
+        "name": "Show: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "mark": { "type": "rect", "opacity": 0.05, "color": "#4863a0" },
+      "transform": [{ "filter": "datum.type === 'forecast' && datum.metric_label === metric_select" }],
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "x2": { "value": 680 }, "y": { "value": 0 }, "y2": { "value": 340 }
+      }
+    },
+    {
+      "mark": { "type": "rule", "strokeDash": [4,3], "color": "#bbb", "size": 1 },
+      "transform": [{ "filter": "datum.year === 2024 && datum.metric_label === metric_select" }],
+      "encoding": { "x": { "field": "year", "type": "quantitative" } }
+    },
+    {
+      "mark": { "type": "text", "align": "center", "fontSize": 9.5, "color": "#aaa", "fontStyle": "italic", "dy": -6 },
+      "transform": [{ "filter": "datum.year === 2024 && datum.metric_label === metric_select" }],
+      "encoding": { "x": { "field": "year", "type": "quantitative" }, "y": { "value": 0 }, "text": { "value": "Actual ← | → Forecast" } }
+    },
+    {
+      "mark": { "type": "area", "opacity": 0.08, "interpolate": "monotone" },
+      "transform": [{ "filter": "datum.metric_label === metric_select" }],
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative", "scale": { "zero": false, "domain": [2019,2030] }, "axis": { "title": "Year", "format": "d", "labelAngle": 0 } },
+        "y": { "field": "value", "type": "quantitative", "axis": { "title": "Volume (Millions)", "format": ".0f" }, "scale": { "zero": true } },
+        "color": { "field": "metric_label", "type": "nominal", "scale": { "domain": ["Day Trips (M)","Overnight Trips (M)","Nights Away (M)"], "range": ["#185FA5","#1D9E75","#BA7517"] }, "legend": null }
+      }
+    },
+    {
+      "mark": { "type": "line", "strokeWidth": 3, "interpolate": "monotone" },
+      "transform": [{ "filter": "datum.metric_label === metric_select && datum.type === 'actual'" }],
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "y": { "field": "value", "type": "quantitative" },
+        "color": { "field": "metric_label", "type": "nominal", "scale": { "domain": ["Day Trips (M)","Overnight Trips (M)","Nights Away (M)"], "range": ["#185FA5","#1D9E75","#BA7517"] }, "legend": null }
+      }
+    },
+    {
+      "mark": { "type": "line", "strokeWidth": 3, "strokeDash": [6,4], "interpolate": "monotone" },
+      "transform": [{ "filter": "datum.metric_label === metric_select && (datum.type === 'forecast' || datum.year === 2024)" }],
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "y": { "field": "value", "type": "quantitative" },
+        "color": { "field": "metric_label", "type": "nominal", "scale": { "domain": ["Day Trips (M)","Overnight Trips (M)","Nights Away (M)"], "range": ["#185FA5","#1D9E75","#BA7517"] }, "legend": null }
+      }
+    },
+    {
+      "params": [{ "name": "hover_dom", "select": { "type": "point", "on": "pointerover", "nearest": true, "fields": ["year"] } }],
+      "mark": { "type": "circle", "size": 80 },
+      "transform": [{ "filter": "datum.metric_label === metric_select" }],
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "y": { "field": "value", "type": "quantitative" },
+        "color": { "field": "metric_label", "type": "nominal", "scale": { "domain": ["Day Trips (M)","Overnight Trips (M)","Nights Away (M)"], "range": ["#185FA5","#1D9E75","#BA7517"] }, "legend": null },
+        "size": { "condition": { "param": "hover_dom", "empty": false, "value": 220 }, "value": 60 },
+        "opacity": { "condition": { "param": "hover_dom", "empty": false, "value": 1 }, "value": 0.5 },
+        "tooltip": [
+          { "field": "year", "type": "ordinal", "title": "Year" },
+          { "field": "type", "type": "nominal", "title": "Period" },
+          { "field": "metric_label", "type": "nominal", "title": "Metric" },
+          { "field": "value", "type": "quantitative", "title": "Value (M)", "format": ".2f" },
+          { "field": "spend_total_real", "type": "quantitative", "title": "Total Spend Real ($B)", "format": ".1f" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 150, "color": "#E64040" },
+      "transform": [{ "filter": "datum.year === 2020 && datum.metric_label === metric_select" }],
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "y": { "field": "value", "type": "quantitative" }
+      }
+    },
+    {
+      "mark": { "type": "text", "align": "left", "dx": 8, "dy": -14, "fontSize": 9.5, "fontWeight": "bold", "color": "#E64040" },
+      "transform": [{ "filter": "datum.year === 2020 && datum.metric_label === metric_select" }],
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "y": { "field": "value", "type": "quantitative" },
+        "text": { "value": "COVID-19 low" }
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 150, "color": "#009E73" },
+      "transform": [{ "filter": "datum.year === 2022 && datum.metric_label === metric_select" }],
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "y": { "field": "value", "type": "quantitative" }
+      }
+    },
+    {
+      "mark": { "type": "text", "align": "left", "dx": 8, "dy": -14, "fontSize": 9.5, "fontWeight": "bold", "color": "#009E73" },
+      "transform": [{ "filter": "datum.year === 2022 && datum.metric_label === metric_select" }],
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "y": { "field": "value", "type": "quantitative" },
+        "text": { "value": "Rebound peak" }
+      }
+    }
+  ],
+  "config": { "view": { "stroke": null }, "axis": { "grid": true, "gridColor": "#f0f0f0" } }
+}

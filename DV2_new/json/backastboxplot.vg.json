@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Box plot of Australian daytrip expenditure by state.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/daytrip_scatter.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "trips": "number",
+        "expenditure": "number"
+      }
+    }
+  },
+  "height": 180,
+  "width": 250,
+  "title": {
+    "text": "Australian Daytrip: Expenditure by State",
+    "fontSize": 15,
+    "fontWeight": "bold"
+  },
+  "mark": {
+    "type": "boxplot",
+    "extent": "min-max",
+    "median": {"color": "white"}
+  },
+  "encoding": {
+    "x": {
+      "field": "state",
+      "type": "nominal",
+      "title": "State",
+      "sort": "-y",
+      "axis": {"labelAngle": -30}
+    },
+    "y": {
+      "field": "expenditure",
+      "type": "quantitative",
+      "title": "Expenditure ($M)",
+      "axis": {"format": ",.0f"}
+    },
+    "color": {
+      "field": "region",
+      "type": "nominal",
+      "title": "Region",
+      "scale": {
+        "domain": ["Eastern", "Central", "Western", "Northern", "Island"],
+        "range": ["#3F7EA6", "#E69F00", "#74BC76", "#CC79A7", "#999999"]
+      }
+    },
+    "tooltip": [
+      {"field": "state", "type": "nominal", "title": "State"},
+      {"field": "region", "type": "nominal", "title": "Region"},
+      {"field": "expenditure", "type": "quantitative", "title": "Expenditure ($M)", "format": ",.2f"}
+    ]
+  }
+}
