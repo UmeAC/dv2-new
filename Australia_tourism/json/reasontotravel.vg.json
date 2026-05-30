@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/reason_trips%20update.csv",
+    "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/reason_trips%20update.csv",
     "format": {
       "type": "csv",
       "parse": {"year": "number", "trips": "number"}
