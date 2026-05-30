@@ -54,7 +54,7 @@
       "width": 310,
       "height": 360,
       "data": {
-        "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/domestic_state_purpose.csv",
+        "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/domestic_state_purpose.csv",
         "format": { 
           "type": "csv", 
           "parse": { "year": "number", "holiday": "number", "vfr": "number", "business": "number", "other": "number" } 
