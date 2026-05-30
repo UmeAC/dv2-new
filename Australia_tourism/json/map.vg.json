@@ -3,7 +3,7 @@
   "height": 500,
   "width": "container",
   "data": {
-    "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/domestic%20dec2024dec2025.csv",
+    "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/domestic%20dec2024dec2025.csv",
     "format": {"type": "csv"}
   },
   "projection": {"type": "mercator"},
@@ -18,7 +18,7 @@
           "lookup": "properties.name",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/domestic%20dec2024dec2025.csv"
+              "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/domestic%20dec2024dec2025.csv"
             },
             "key": "name",
             "fields": ["Expenditure", "E_change", "night", "Expenditure_2024"]
@@ -48,7 +48,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/domestic%20dec2024dec2025.csv"
+        "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/domestic%20dec2024dec2025.csv"
       },
       "mark": {"type": "text", "fontSize": 11, "fontWeight": "bold", "dy": -8},
       "encoding": {
@@ -73,7 +73,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/domestic%20dec2024dec2025.csv"
+        "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/domestic%20dec2024dec2025.csv"
       },
       "transform": [
         {"filter": "indexof(['Jervis Bay Territory', 'Australian Capital Territory'], datum.name) < 0"},
@@ -95,7 +95,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/domestic%20dec2024dec2025.csv"
+        "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/domestic%20dec2024dec2025.csv"
       },
       "transform": [
         {"filter": "datum.name == 'Australian Capital Territory'"}
@@ -117,7 +117,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/domestic%20dec2024dec2025.csv"
+        "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/domestic%20dec2024dec2025.csv"
       },
       "transform": [
         {"filter": "datum.name == 'Australian Capital Territory'"},
