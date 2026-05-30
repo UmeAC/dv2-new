@@ -1,16 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "International Arrivals \u2014 Cumulative Growth 2010 to 2030 ('000)",
-    "subtitle": "Each bar shows year-on-year change. Blue = growth, Orange = decline, Purple = forecast. Hover for detail.",
-    "fontSize": 16,
-    "subtitleFontSize": 12,
-    "subtitleColor": "#888",
-    "fontWeight": "bold",
-    "anchor": "start"
-  },
-  "width": 720,
-  "height": 420,
+  "width": "container",
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/international_waterfall.csv",
     "format": {
