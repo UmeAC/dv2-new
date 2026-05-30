@@ -29,9 +29,9 @@
   --section-gap:  80px;
   --card-radius:  14px;
 
-  /* ── EXPANDED SINGLE SOURCE OF TRUTH FOR WIDER DESKTOP VIEW ── */
-  --page-width:   1200px; /* Increased from 800px to expand layout across the screen */
-  --page-pad:     48px;   /* Adjusted padding to give elements breathing room on wide screens */
+  /* ── SINGLE SOURCE OF TRUTH FOR WIDTH ── */
+  --page-width:   1280px;
+  --page-pad:     40px;
 }
 
 /* ══════════════════════════════════════
@@ -97,15 +97,15 @@ a:hover { color: var(--gold-light); }
 
 .nav-links {
   display: flex;
-  gap: 40px; /* Reduced gap from 75px so right alignment stays visually tight */
+  gap: 75px;
   list-style: none;
 }
 .nav-links a {
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--blue-light);
-  font-weight: 500;
+  font-weight: 400;
 }
 .nav-links a:hover { color: var(--navy); }
 
@@ -116,7 +116,7 @@ a:hover { color: var(--gold-light); }
   position: relative;
   background: var(--blue-mid);
   color: var(--sand);
-  padding: 80px var(--page-pad) 80px; /* More symmetric breathing room vertically */
+  padding: 56px var(--page-pad) 60px;
   overflow: hidden;
   text-align: center;
   display: flex;
@@ -159,23 +159,22 @@ a:hover { color: var(--gold-light); }
 }
 
 .header h1 {
-  font-size: clamp(32px, 4.5vw, 56px); /* Scaled slightly up to match larger screen real estate */
+  font-size: clamp(28px, 4vw, 52px);
   font-weight: 900;
   color: var(--white);
   margin-bottom: 16px;
-  max-width: 960px;
   opacity: 0;
   animation: fadeUp 0.7s 0.3s forwards;
 }
 .header h1 em { font-style: italic; color: var(--gold-light); }
 
 .header-sub {
-  font-size: 15.5px;
+  font-size: 14.5px;
   font-weight: 300;
   color: var(--sand);
   line-height: 1.8;
-  max-width: 720px; /* Allowed the summary paragraph text to run slightly wider */
-  margin-bottom: 36px;
+  max-width: 560px;
+  margin-bottom: 32px;
   opacity: 0;
   animation: fadeUp 0.7s 0.45s forwards;
 }
@@ -183,9 +182,9 @@ a:hover { color: var(--gold-light); }
 .header-stats-row {
   display: flex;
   gap: 0;
-  width: 100%; /* Spans across full width of the updated inner hero layout */
-  max-width: 900px; /* Caps container width so data panels don't get overly stretched */
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: var(--page-width);
+  max-width: 100%;
+  border: 1px solid var(--sand-light);
   border-radius: 12px;
   overflow: hidden;
   opacity: 0;
@@ -193,8 +192,8 @@ a:hover { color: var(--gold-light); }
 }
 
 .header-stat {
-  padding: 20px 28px;
-  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 16px 28px;
+  border-right: 1px var(--sand-light);
   text-align: center;
   flex: 1;
 }
@@ -202,14 +201,14 @@ a:hover { color: var(--gold-light); }
 
 .header-stat-num {
   font-family: var(--font-display);
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--gold-light);
   line-height: 1;
   margin-bottom: 4px;
 }
 .header-stat-label {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--sand-light);
   line-height: 1.4;
 }
@@ -232,7 +231,7 @@ a:hover { color: var(--gold-light); }
 .scroll-cue::after { content: '↓'; font-size: 14px; }
 
 /* ══════════════════════════════════════
-   LAYOUT
+   LAYOUT — single container, consistent everywhere
 ══════════════════════════════════════ */
 .container {
   width: var(--page-width);
@@ -272,7 +271,7 @@ a:hover { color: var(--gold-light); }
 }
 
 .chapter h2 {
-  font-size: clamp(26px, 3.5vw, 40px);
+  font-size: clamp(24px, 3vw, 36px);
   color: var(--blue-mid);
   max-width: 100%;
   margin-bottom: 0;
@@ -287,7 +286,7 @@ a:hover { color: var(--gold-light); }
 }
 
 .chapter-intro {
-  font-size: 15.5px;
+  font-size: 15px;
   color: var(--mid);
   max-width: 100%;
   line-height: 1.8;
@@ -299,7 +298,7 @@ a:hover { color: var(--gold-light); }
 .annotation-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px; /* Slightly wider spacing to look balanced on a larger grid width */
+  gap: 14px;
   margin: 28px 0;
   width: 100%;
 }
@@ -307,7 +306,7 @@ a:hover { color: var(--gold-light); }
 .annotation-card {
   background: var(--white);
   border-radius: var(--card-radius);
-  padding: 24px 26px;
+  padding: 20px 22px;
   border-left: 4px solid var(--blue-light);
   box-shadow: 0 1px 14px rgba(28,58,92,0.07);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -329,26 +328,26 @@ a:hover { color: var(--gold-light); }
 }
 .annotation-value {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--navy);
   line-height: 1;
 }
 .annotation-desc {
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--mid);
   margin-top: 7px;
   line-height: 1.55;
 }
 
 /* ══════════════════════════════════════
-   VIS SECTIONS
+   VIS SECTIONS — uniform padding, full width
 ══════════════════════════════════════ */
 .vis-section {
   background: var(--white);
   border-radius: var(--card-radius);
-  padding: 32px 36px;
-  margin: 24px 0;
+  padding: 28px 32px;
+  margin: 20px 0;
   width: 100%;
   box-shadow: 0 2px 18px rgba(28,58,92,0.06);
   transition: box-shadow 0.2s ease;
@@ -363,13 +362,13 @@ a:hover { color: var(--gold-light); }
 
 .vis-title {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--blue-mid);
   margin-bottom: 4px;
 }
 .vis-desc {
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--muted);
   margin-bottom: 20px;
   line-height: 1.6;
@@ -383,7 +382,7 @@ a:hover { color: var(--gold-light); }
   border-radius: 10px;
   padding: 14px 18px;
   margin-top: 18px;
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--mid);
   line-height: 1.65;
   border-left: 3px solid var(--gold);
@@ -421,8 +420,8 @@ a:hover { color: var(--gold-light); }
 .side-by-side {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin: 24px 0;
+  gap: 16px;
+  margin: 20px 0;
   width: 100%;
 }
 
@@ -431,33 +430,33 @@ a:hover { color: var(--gold-light); }
 ══════════════════════════════════════ */
 .story-break {
   background: var(--blue-mid);
-  padding: 72px var(--page-pad);
+  padding: 64px var(--page-pad);
   margin: var(--section-gap) 0;
 }
 .story-break .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 56px;
   align-items: center;
 }
 
 .story-break-text h3 {
-  font-size: 34px;
+  font-size: 30px;
   color: var(--white);
   margin-bottom: 14px;
 }
 .story-break-text h3 em { color: var(--gold-light); font-style: italic; }
 .story-break-text p {
-  font-size: 15px;
+  font-size: 14.5px;
   color: var(--sand-light);
   line-height: 1.8;
 }
 
-.story-break-metrics { display: flex; flex-direction: column; gap: 18px; }
-.metric-row { display: flex; align-items: center; gap: 16px; }
+.story-break-metrics { display: flex; flex-direction: column; gap: 16px; }
+.metric-row { display: flex; align-items: center; gap: 14px; }
 .metric-bar-wrap {
   flex: 1;
-  height: 8px;
+  height: 7px;
   background: rgba(255,255,255,0.12);
   border-radius: 4px;
   overflow: hidden;
@@ -466,7 +465,7 @@ a:hover { color: var(--gold-light); }
 .metric-row-label { font-size: 12px; color: var(--sand-light); min-width: 34px; }
 .metric-row-val {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--gold-light);
   min-width: 58px;
@@ -480,8 +479,8 @@ a:hover { color: var(--gold-light); }
   background: #0d1821;
   color: rgba(245,237,216,0.4);
   text-align: center;
-  padding: 60px var(--page-pad);
-  font-size: 13px;
+  padding: 52px var(--page-pad);
+  font-size: 12.5px;
   line-height: 1.9;
   margin-top: var(--section-gap);
 }
@@ -500,7 +499,7 @@ a:hover { color: var(--gold-light); }
 .vis-intl-wrap { width: 100%; }
 
 .intl-bar-scroll {
-  max-height: 360px;
+  max-height: 340px;
   overflow-y: auto;
   overflow-x: hidden;
   border-top: 1px solid #f0ece4;
@@ -523,19 +522,21 @@ a:hover { color: var(--gold-light); }
   gap: 12px;
 }
 
+/* Target labels and inputs inside the dynamic configuration */
 .vega-bind label {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
   font-weight: 400;
   color: var(--charcoal);
-  margin-right: 18px;
+  margin-right: 18px; /* Generates uniform spacing between option blocks */
   transition: color 0.2s ease;
 }
 .vega-bind label:hover {
   color: var(--blue-light);
 }
 
+/* Adds space directly between radio dots and their labels */
 .vega-bind input[type="radio"] {
   cursor: pointer;
   accent-color: var(--blue-mid);
@@ -595,14 +596,14 @@ a:hover { color: var(--gold-light); }
     --page-width: 100%;
     --page-pad:   20px;
   }
-  .header { min-height: auto; padding: 60px var(--page-pad); }
+  .header { min-height: auto; }
   .header-stats-row { flex-direction: column; }
   .header-stat { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
   .header-stat:last-child { border-bottom: none; }
-  .annotation-grid { grid-template-columns: 1fr; gap: 14px; }
-  .side-by-side { grid-template-columns: 1fr; gap: 16px; }
-  .story-break .container { grid-template-columns: 1fr; gap: 36px; }
+  .annotation-grid { grid-template-columns: 1fr; }
+  .side-by-side { grid-template-columns: 1fr; }
+  .story-break .container { grid-template-columns: 1fr; }
   .story-break-2 .container { grid-template-columns: 1fr; }
   .nav { padding: 0 20px; }
-  .nav-links { gap: 16px; }
+  .nav-links { gap: 14px; }
 }
