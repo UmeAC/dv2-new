@@ -1,0 +1,49 @@
+state,period,year,trips,expenditure,region
+New South Wales,YE December 2019,2019,69209.74,7578.26,Eastern
+New South Wales,YE December 2020,2020,59157.65,5984.01,Eastern
+New South Wales,YE December 2021,2021,60873.15,7055.17,Eastern
+New South Wales,YE December 2022,2022,72010.61,10322.60,Eastern
+New South Wales,YE December 2023,2023,76598.17,11458.00,Eastern
+New South Wales,YE December 2024,2024,78607.18,12441.09,Eastern
+Victoria,YE December 2019,2019,66467.65,6544.20,Eastern
+Victoria,YE December 2020,2020,49880.28,4884.44,Eastern
+Victoria,YE December 2021,2021,59201.06,6405.17,Eastern
+Victoria,YE December 2022,2022,70823.05,9994.87,Eastern
+Victoria,YE December 2023,2023,72608.97,10654.06,Eastern
+Victoria,YE December 2024,2024,76728.94,10818.00,Eastern
+Queensland,YE December 2019,2019,40721.93,4508.15,Eastern
+Queensland,YE December 2020,2020,37606.17,4002.90,Eastern
+Queensland,YE December 2021,2021,43134.03,4791.96,Eastern
+Queensland,YE December 2022,2022,45265.22,6789.99,Eastern
+Queensland,YE December 2023,2023,46440.60,7324.71,Eastern
+Queensland,YE December 2024,2024,48636.31,7186.48,Eastern
+South Australia,YE December 2019,2019,12620.69,1221.89,Central
+South Australia,YE December 2020,2020,12138.31,1154.09,Central
+South Australia,YE December 2021,2021,13927.49,1784.03,Central
+South Australia,YE December 2022,2022,14533.91,1914.27,Central
+South Australia,YE December 2023,2023,14833.05,2269.49,Central
+South Australia,YE December 2024,2024,15436.85,2163.90,Central
+Western Australia,YE December 2019,2019,22012.83,2492.53,Western
+Western Australia,YE December 2020,2020,21539.55,2789.24,Western
+Western Australia,YE December 2021,2021,24399.27,2834.61,Western
+Western Australia,YE December 2022,2022,24909.18,3575.56,Western
+Western Australia,YE December 2023,2023,25672.35,4181.89,Western
+Western Australia,YE December 2024,2024,26778.29,5024.37,Western
+Tasmania,YE December 2019,2019,3973.05,420.20,Island
+Tasmania,YE December 2020,2020,3970.05,477.36,Island
+Tasmania,YE December 2021,2021,5012.15,611.97,Island
+Tasmania,YE December 2022,2022,5199.18,712.09,Island
+Tasmania,YE December 2023,2023,5267.47,733.96,Island
+Tasmania,YE December 2024,2024,5358.88,726.50,Island
+Northern Territory,YE December 2019,2019,551.31,66.53,Northern
+Northern Territory,YE December 2020,2020,669.07,95.59,Northern
+Northern Territory,YE December 2021,2021,772.97,98.92,Northern
+Northern Territory,YE December 2022,2022,771.81,118.80,Northern
+Northern Territory,YE December 2023,2023,823.51,125.61,Northern
+Northern Territory,YE December 2024,2024,849.56,210.35,Northern
+ACT,YE December 2019,2019,1738.62,243.48,Central
+ACT,YE December 2020,2020,1483.72,176.26,Central
+ACT,YE December 2021,2021,1535.01,236.99,Central
+ACT,YE December 2022,2022,1797.32,448.88,Central
+ACT,YE December 2023,2023,1866.11,535.10,Central
+ACT,YE December 2024,2024,1938.68,279.74,Central

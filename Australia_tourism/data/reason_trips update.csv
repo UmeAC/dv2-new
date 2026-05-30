@@ -1,0 +1,231 @@
+year,trip_type,reason,state,trips
+2021,Interstate,Business,ACT,344.298
+2021,Interstate,Business,NSW,1271.829
+2021,Interstate,Business,NT,183.093
+2021,Interstate,Business,QLD,664.858
+2021,Interstate,Business,SA,314.629
+2021,Interstate,Business,VIC,620.03
+2021,Interstate,Business,WA,236.184
+2021,Interstate,Holiday,ACT,459.163
+2021,Interstate,Holiday,NSW,2264.309
+2021,Interstate,Holiday,NT,360.683
+2021,Interstate,Holiday,QLD,1682.818
+2021,Interstate,Holiday,SA,563.376
+2021,Interstate,Holiday,VIC,711.898
+2021,Interstate,Holiday,WA,183.684
+2021,Interstate,Other,ACT,149.642
+2021,Interstate,Other,NSW,606.469
+2021,Interstate,Other,QLD,263.706
+2021,Interstate,Other,SA,141.168
+2021,Interstate,Other,VIC,186.977
+2021,Interstate,Visiting Friends & Relatives,ACT,770.624
+2021,Interstate,Visiting Friends & Relatives,NSW,2152.415
+2021,Interstate,Visiting Friends & Relatives,NT,95.486
+2021,Interstate,Visiting Friends & Relatives,QLD,1205.217
+2021,Interstate,Visiting Friends & Relatives,SA,497.426
+2021,Interstate,Visiting Friends & Relatives,VIC,1128.613
+2021,Interstate,Visiting Friends & Relatives,WA,212.497
+2021,Intrastate,Business,NSW,2810.26
+2021,Intrastate,Business,NT,224.985
+2021,Intrastate,Business,QLD,3211.615
+2021,Intrastate,Business,SA,765.073
+2021,Intrastate,Business,TAS,277.261
+2021,Intrastate,Business,VIC,1564.758
+2021,Intrastate,Business,WA,2258.138
+2021,Intrastate,Holiday,NSW,8060.383
+2021,Intrastate,Holiday,NT,307.831
+2021,Intrastate,Holiday,QLD,7263.258
+2021,Intrastate,Holiday,SA,2424.563
+2021,Intrastate,Holiday,TAS,925.947
+2021,Intrastate,Holiday,VIC,7796.531
+2021,Intrastate,Holiday,WA,4248.866
+2021,Intrastate,Other,NSW,1260.742
+2021,Intrastate,Other,QLD,1262.393
+2021,Intrastate,Other,SA,335.166
+2021,Intrastate,Other,TAS,128.66
+2021,Intrastate,Other,VIC,957.922
+2021,Intrastate,Other,WA,611.545
+2021,Intrastate,Visiting Friends & Relatives,NSW,6534.906
+2021,Intrastate,Visiting Friends & Relatives,QLD,5430.498
+2021,Intrastate,Visiting Friends & Relatives,SA,1169.993
+2021,Intrastate,Visiting Friends & Relatives,TAS,409.136
+2021,Intrastate,Visiting Friends & Relatives,VIC,5248.667
+2021,Intrastate,Visiting Friends & Relatives,WA,2262.628
+2021,Total,Business,ACT,344.298
+2021,Total,Business,NSW,4082.089
+2021,Total,Business,NT,408.078
+2021,Total,Business,QLD,3876.473
+2021,Total,Business,SA,1079.703
+2021,Total,Business,VIC,2184.788
+2021,Total,Business,WA,2494.322
+2021,Total,Holiday,ACT,462.667
+2021,Total,Holiday,NSW,10324.691
+2021,Total,Holiday,NT,668.513
+2021,Total,Holiday,QLD,8946.076
+2021,Total,Holiday,SA,2987.939
+2021,Total,Holiday,VIC,8508.429
+2021,Total,Holiday,WA,4432.55
+2021,Total,Other,ACT,149.642
+2021,Total,Other,NSW,1867.211
+2021,Total,Other,QLD,1526.099
+2021,Total,Other,SA,476.334
+2021,Total,Other,VIC,1144.899
+2021,Total,Other,WA,650.323
+2021,Total,Visiting Friends & Relatives,ACT,779.091
+2021,Total,Visiting Friends & Relatives,NSW,8687.321
+2021,Total,Visiting Friends & Relatives,NT,171.419
+2021,Total,Visiting Friends & Relatives,QLD,6635.715
+2021,Total,Visiting Friends & Relatives,SA,1667.419
+2021,Total,Visiting Friends & Relatives,VIC,6377.279
+2021,Total,Visiting Friends & Relatives,WA,2475.126
+2022,Interstate,Business,ACT,789.699
+2022,Interstate,Business,NSW,2879.369
+2022,Interstate,Business,NT,282.188
+2022,Interstate,Business,QLD,1663.609
+2022,Interstate,Business,SA,732.264
+2022,Interstate,Business,VIC,1971.07
+2022,Interstate,Business,WA,544.036
+2022,Interstate,Holiday,ACT,857.253
+2022,Interstate,Holiday,NSW,4019.903
+2022,Interstate,Holiday,NT,519.327
+2022,Interstate,Holiday,QLD,3860.829
+2022,Interstate,Holiday,SA,1021.467
+2022,Interstate,Holiday,VIC,2509.944
+2022,Interstate,Holiday,WA,429.928
+2022,Interstate,Other,ACT,215.969
+2022,Interstate,Other,NSW,686.813
+2022,Interstate,Other,QLD,395.922
+2022,Interstate,Other,SA,160.88
+2022,Interstate,Other,VIC,366.46
+2022,Interstate,Visiting Friends & Relatives,ACT,1154.08
+2022,Interstate,Visiting Friends & Relatives,NSW,3560.694
+2022,Interstate,Visiting Friends & Relatives,NT,141.101
+2022,Interstate,Visiting Friends & Relatives,QLD,2415.774
+2022,Interstate,Visiting Friends & Relatives,SA,800.105
+2022,Interstate,Visiting Friends & Relatives,VIC,2280.008
+2022,Interstate,Visiting Friends & Relatives,WA,413.246
+2022,Intrastate,Business,NSW,3528.699
+2022,Intrastate,Business,NT,215.711
+2022,Intrastate,Business,QLD,3553.074
+2022,Intrastate,Business,SA,847.491
+2022,Intrastate,Business,TAS,230.027
+2022,Intrastate,Business,VIC,2154.226
+2022,Intrastate,Business,WA,2259.56
+2022,Intrastate,Holiday,NSW,11102.769
+2022,Intrastate,Holiday,NT,307.14
+2022,Intrastate,Holiday,QLD,7171.323
+2022,Intrastate,Holiday,SA,2092.744
+2022,Intrastate,Holiday,TAS,801.039
+2022,Intrastate,Holiday,VIC,10077.238
+2022,Intrastate,Holiday,WA,3991.842
+2022,Intrastate,Other,NSW,1520.758
+2022,Intrastate,Other,QLD,1059.466
+2022,Intrastate,Other,SA,341.308
+2022,Intrastate,Other,TAS,118.562
+2022,Intrastate,Other,VIC,817.962
+2022,Intrastate,Other,WA,504.167
+2022,Intrastate,Visiting Friends & Relatives,NSW,8503.415
+2022,Intrastate,Visiting Friends & Relatives,QLD,5957.034
+2022,Intrastate,Visiting Friends & Relatives,SA,1250.473
+2022,Intrastate,Visiting Friends & Relatives,TAS,407.911
+2022,Intrastate,Visiting Friends & Relatives,VIC,6359.116
+2022,Intrastate,Visiting Friends & Relatives,WA,2535.856
+2023,Interstate,Business,ACT,959.66
+2023,Interstate,Business,NSW,2912.64
+2023,Interstate,Business,NT,235.77
+2023,Interstate,Business,QLD,1752.86
+2023,Interstate,Business,SA,770.89
+2023,Interstate,Business,VIC,2383.61
+2023,Interstate,Business,WA,720.03
+2023,Interstate,Holiday,ACT,748.91
+2023,Interstate,Holiday,NSW,4376.9
+2023,Interstate,Holiday,NT,420.84
+2023,Interstate,Holiday,QLD,3367.96
+2023,Interstate,Holiday,SA,994.82
+2023,Interstate,Holiday,VIC,3005.45
+2023,Interstate,Holiday,WA,479.22
+2023,Interstate,Other,ACT,325.09
+2023,Interstate,Other,NSW,749.23
+2023,Interstate,Other,QLD,330.91
+2023,Interstate,Other,SA,116.55
+2023,Interstate,Other,VIC,407.47
+2023,Interstate,Visiting Friends & Relatives,ACT,1274.99
+2023,Interstate,Visiting Friends & Relatives,NSW,3616.48
+2023,Interstate,Visiting Friends & Relatives,QLD,2392.88
+2023,Interstate,Visiting Friends & Relatives,SA,898.1
+2023,Interstate,Visiting Friends & Relatives,VIC,2526.89
+2023,Interstate,Visiting Friends & Relatives,WA,459.04
+2023,Intrastate,Business,NSW,3975.997
+2023,Intrastate,Business,NT,222.92
+2023,Intrastate,Business,QLD,3791.69
+2023,Intrastate,Business,SA,866.91
+2023,Intrastate,Business,TAS,279.98
+2023,Intrastate,Business,VIC,2122.76
+2023,Intrastate,Business,WA,2730.35
+2023,Intrastate,Holiday,NSW,10867.75
+2023,Intrastate,Holiday,NT,278.87
+2023,Intrastate,Holiday,QLD,7216.67
+2023,Intrastate,Holiday,SA,2021.6
+2023,Intrastate,Holiday,TAS,799.13
+2023,Intrastate,Holiday,VIC,10181.24
+2023,Intrastate,Holiday,WA,3922.79
+2023,Intrastate,Other,NSW,1608.98
+2023,Intrastate,Other,QLD,1175.79
+2023,Intrastate,Other,SA,313.32
+2023,Intrastate,Other,VIC,959.38
+2023,Intrastate,Other,WA,600.66
+2023,Intrastate,Visiting Friends & Relatives,NSW,9496.29
+2023,Intrastate,Visiting Friends & Relatives,QLD,5547.11
+2023,Intrastate,Visiting Friends & Relatives,SA,1511.69
+2023,Intrastate,Visiting Friends & Relatives,TAS,471.25
+2023,Intrastate,Visiting Friends & Relatives,VIC,7230.43
+2023,Intrastate,Visiting Friends & Relatives,WA,2237.79
+2024,Interstate,Business,ACT,973.6
+2024,Interstate,Business,NSW,3177.36
+2024,Interstate,Business,NT,349.96
+2024,Interstate,Business,QLD,2187.27
+2024,Interstate,Business,SA,984.67
+2024,Interstate,Business,VIC,2361.28
+2024,Interstate,Business,WA,731.75
+2024,Interstate,Holiday,ACT,911.79
+2024,Interstate,Holiday,NSW,4451.87
+2024,Interstate,Holiday,NT,346.65
+2024,Interstate,Holiday,QLD,3367.36
+2024,Interstate,Holiday,SA,1116.6
+2024,Interstate,Holiday,VIC,3088.12
+2024,Interstate,Holiday,WA,425.51
+2024,Interstate,Other,NSW,629.44
+2024,Interstate,Other,QLD,314.19
+2024,Interstate,Other,SA,245.09
+2024,Interstate,Other,VIC,403.32
+2024,Interstate,Visiting Friends & Relatives,ACT,1067.45
+2024,Interstate,Visiting Friends & Relatives,NSW,3801.4
+2024,Interstate,Visiting Friends & Relatives,QLD,2560.42
+2024,Interstate,Visiting Friends & Relatives,SA,879.26
+2024,Interstate,Visiting Friends & Relatives,VIC,2385.2
+2024,Interstate,Visiting Friends & Relatives,WA,497.75
+2024,Intrastate,Business,NSW,4181.13
+2024,Intrastate,Business,NT,239.98
+2024,Intrastate,Business,QLD,4022.12
+2024,Intrastate,Business,SA,748.83
+2024,Intrastate,Business,TAS,351.29
+2024,Intrastate,Business,VIC,2546.58
+2024,Intrastate,Business,WA,2543.02
+2024,Intrastate,Holiday,NSW,11327.29
+2024,Intrastate,Holiday,NT,178.09
+2024,Intrastate,Holiday,QLD,7343.68
+2024,Intrastate,Holiday,SA,2055.44
+2024,Intrastate,Holiday,TAS,872.67
+2024,Intrastate,Holiday,VIC,10605.17
+2024,Intrastate,Holiday,WA,3789.06
+2024,Intrastate,Other,NSW,1602.89
+2024,Intrastate,Other,QLD,1239.33
+2024,Intrastate,Other,SA,401.56
+2024,Intrastate,Other,VIC,929.25
+2024,Intrastate,Other,WA,574.42
+2024,Intrastate,Visiting Friends & Relatives,NSW,8957.53
+2024,Intrastate,Visiting Friends & Relatives,QLD,5759.57
+2024,Intrastate,Visiting Friends & Relatives,SA,1324.64
+2024,Intrastate,Visiting Friends & Relatives,TAS,370.32
+2024,Intrastate,Visiting Friends & Relatives,VIC,7160.15
+2024,Intrastate,Visiting Friends & Relatives,WA,2402.76

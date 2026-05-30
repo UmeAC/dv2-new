@@ -1,0 +1,357 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "International Arrivals \u2014 Cumulative Growth 2010 to 2030 ('000)",
+    "subtitle": "Each bar shows year-on-year change. Blue = growth, Orange = decline, Purple = forecast. Hover for detail.",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#888",
+    "fontWeight": "bold",
+    "anchor": "start"
+  },
+  "width": 720,
+  "height": 420,
+  "data": {
+    "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/international_waterfall.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "arrivals": "number",
+        "change": "number",
+        "bar_start": "number",
+        "bar_end": "number",
+        "spend": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusTopLeft": 3,
+        "cornerRadiusTopRight": 3,
+        "cornerRadiusBottomLeft": 3,
+        "cornerRadiusBottomRight": 3,
+        "minBandSize": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+            "labelAngle": -40,
+            "tickBand": "extent",
+            "bandPosition": 0
+          }
+        },
+        "y": {
+          "field": "bar_start",
+          "type": "quantitative",
+          "scale": {
+            "zero": false,
+            "domain": [
+              0,
+              12000
+            ]
+          },
+          "axis": {
+            "title": "Arrivals ('000)",
+            "format": ",.0f",
+            "tickCount": 8,
+            "grid": true,
+            "gridColor": "#f0f0f0"
+          }
+        },
+        "y2": {
+          "field": "bar_end",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "bar_type",
+          "type": "nominal",
+          "title": "Change Type",
+          "scale": {
+            "domain": [
+              "base",
+              "growth",
+              "decline",
+              "forecast"
+            ],
+            "range": [
+              "#888780",
+              "#0077BB",
+              "#EE7733",
+              "#AA3377"
+            ]
+          },
+          "legend": {
+            "labelExpr": "datum.label === 'base' ? '2010 Base' : datum.label === 'growth' ? 'Growth' : datum.label === 'decline' ? 'Decline' : 'Forecast'",
+            "orient": "top-left",
+            "direction": "horizontal",
+            "title": null
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0.85
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "bar_type",
+            "type": "nominal",
+            "title": "Type"
+          },
+          {
+            "field": "arrivals",
+            "type": "quantitative",
+            "title": "Total Arrivals ('000)",
+            "format": ",.0f"
+          },
+          {
+            "field": "change",
+            "type": "quantitative",
+            "title": "YoY Change ('000)",
+            "format": "+,.0f"
+          },
+          {
+            "field": "spend",
+            "type": "quantitative",
+            "title": "Intl Spend Real ($B)",
+            "format": ".2f"
+          }
+        ]
+      },
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "on": "pointerover",
+            "fields": [
+              "year"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "tick",
+        "color": "#0077BB",
+        "thickness": 3,
+        "size": 18,
+        "opacity": 0.9
+      },
+      "transform": [
+        {
+          "filter": "abs(datum.change) > 0 && abs(datum.change) < 50"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "bar_end",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "field": "arrivals",
+            "type": "quantitative",
+            "title": "Total Arrivals ('000)",
+            "format": ",.0f"
+          },
+          {
+            "field": "change",
+            "type": "quantitative",
+            "title": "YoY Change ('000)",
+            "format": "+,.0f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 8.5,
+        "fontWeight": "bold",
+        "dy": -6
+      },
+      "transform": [
+        {
+          "filter": "datum.change > 0 && datum.bar_type !== 'base'"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "tickBand": "extent",
+            "bandPosition": 0
+          }
+        },
+        "y": {
+          "field": "bar_end",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "change",
+          "type": "quantitative",
+          "format": "+,.0f"
+        },
+        "color": {
+          "field": "bar_type",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "growth",
+              "forecast"
+            ],
+            "range": [
+              "#185FA5",
+              "#6B1F4E"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 8.5,
+        "fontWeight": "bold",
+        "dy": 5
+      },
+      "transform": [
+        {
+          "filter": "datum.change < 0"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "tickBand": "extent",
+            "bandPosition": 0
+          }
+        },
+        "y": {
+          "field": "bar_end",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "change",
+          "type": "quantitative",
+          "format": ",.0f"
+        },
+        "color": {
+          "value": "#993D00"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 8.5,
+        "fontWeight": "bold",
+        "dy": -6,
+        "color": "#444441"
+      },
+      "transform": [
+        {
+          "filter": "datum.bar_type === 'base'"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "tickBand": "extent",
+            "bandPosition": 0
+          }
+        },
+        "y": {
+          "field": "bar_end",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "arrivals",
+          "type": "quantitative",
+          "format": ",.0f"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": -245,
+        "dy": 150,
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "color": "#EE7733",
+        "fontStyle": "italic"
+      },
+      "transform": [
+        {
+          "filter": "datum.year === 2020"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "tickBand": "extent",
+            "bandPosition": 0
+          }
+        },
+        "y": {
+          "field": "bar_start",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "COVID-19 collapse: -7,638K arrivals in 2020 ->"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "bar": {
+      "binSpacing": 2
+    },
+    "axisX": {
+      "tickBand": "extent",
+      "grid": true,
+      "gridColor": "#f0f0f0"
+    }
+  }
+}
