@@ -28,7 +28,7 @@
       "height": 420,
       "width": 250,
       "data": {
-        "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/international_travel-2.csv",
+        "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/international_travel-2.csv",
         "format": {
           "type": "csv",
           "parse": {
@@ -88,7 +88,7 @@
       "height": 420,
       "width": 300,
       "data": {
-        "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/international_travel-2.csv",
+        "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/international_travel-2.csv",
         "format": {
           "type": "csv",
           "parse": {
