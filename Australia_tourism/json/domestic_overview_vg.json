@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 680, "height": 340,
   "data": {
-    "url": "https://raw.githubusercontent.com/UmeAC/DV2/refs/heads/main/data/domestic_overview.csv",
+    "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/Australia_tourism/data/domestic_overview.csv",
     "format": { "type": "csv", "parse": { "year": "number", "daytrips": "number", "overnight_total": "number", "spend_total_real": "number", "nights": "number" } }
   },
   "transform": [
