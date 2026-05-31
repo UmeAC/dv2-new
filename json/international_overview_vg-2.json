@@ -132,7 +132,7 @@
             { "name": "brush", "select": { "type": "interval", "encodings": ["x"] } },
             { "name": "hover", "select": { "type": "point", "on": "mouseover", "nearest": true, "encodings": ["x"] } }
           ],
-          "mark": { "type": "point", "opacity": 0, "size": 400 },
+          "mark": { "type": "point", "opacity": 0, "size": 1200 },
           "encoding": {
             "x": { "field": "year", "type": "quantitative" },
             "y": { "field": "travellers", "type": "quantitative" },
@@ -216,7 +216,7 @@
           "params": [
             { "name": "hover2", "select": { "type": "point", "on": "mouseover", "nearest": true, "encodings": ["x"] } }
           ],
-          "mark": { "type": "point", "opacity": 0, "size": 400, "color": "#009b9e" },
+          "mark": { "type": "point", "opacity": 0, "size": 1200, "color": "#009b9e" },
           "encoding": {
             "x": { "field": "year", "type": "quantitative" },
             "y": { "field": "intl_spend_real", "type": "quantitative" },
