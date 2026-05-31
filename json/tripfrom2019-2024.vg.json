@@ -1,0 +1,155 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Line chart of Australian daytrip trips by state from 2019 to 2024.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/data/daytrip_scatter.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "trips": "number"
+      }
+    }
+  },
+  "width": "container",
+  "height": 450,
+  "title": {
+    "text": "Australian Daytrip: Number of Trips by State (2019-2024)",
+    "fontSize": 15,
+    "fontWeight": "bold"
+  },
+  "layer": [
+    {
+      "mark": {"type": "line"},
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {"labelAngle": 0}
+        },
+        "y": {
+          "field": "trips",
+          "type": "quantitative",
+          "title": "Daytrip Trips ('000)",
+          "axis": {"format": ",.0f"}
+        },
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "title": "State",
+          "scale": {
+            "domain": ["New South Wales", "Victoria", "Queensland", "Western Australia", "South Australia", "Tasmania", "ACT", "Northern Territory"],
+            "range": ["#20BEA3", "#4178BC", "#7A71F6", "#AA71FF", "#E37CFF", "#EA4E9D", "#FEA7E4", "#8D9F9B"]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "test": {
+              "or": [
+                {"param": "hovered", "empty": false},
+                {"param": "clicked", "empty": false}
+              ]
+            },
+            "value": 1
+          },
+          "value": 0.1
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": {
+              "or": [
+                {"param": "hovered", "empty": false},
+                {"param": "clicked", "empty": false}
+              ]
+            },
+            "value": 3
+          },
+          "value": 4
+        }
+      }
+    },
+    {
+      "params": [
+        {
+          "name": "year",
+          "value": [{"year": 2019}],
+          "select": {
+            "type": "point",
+            "fields": ["year"]
+          },
+          "bind": {
+            "name": "Year",
+            "input": "range",
+            "min": 2019,
+            "max": 2024,
+            "step": 1
+          }
+        },
+        {
+          "name": "hovered",
+          "select": {
+            "type": "point",
+            "fields": ["state"],
+            "toggle": false,
+            "on": "pointerover"
+          }
+        },
+        {
+          "name": "clicked",
+          "select": {"type": "point", "fields": ["state"]}
+        }
+      ],
+      "transform": [{"filter": {"param": "year"}}],
+      "mark": {"type": "circle", "size": 200, "opacity": 1},
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "trips",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {"field": "state", "type": "nominal", "title": "State"},
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "trips", "type": "quantitative", "title": "Trips ('000)", "format": ",.0f"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"filter": {"param": "year"}},
+        {
+          "filter": {
+            "or": [
+              {"param": "hovered", "empty": false},
+              {"param": "clicked", "empty": false}
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "trips", "type": "quantitative"},
+        "text": {"field": "state", "type": "nominal"},
+        "color": {
+          "field": "state",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Interactive scatter plot of Australian daytrip trips vs expenditure by state and year.",
+  "data": {
+  "url": "https://raw.githubusercontent.com/UmeAC/dv2-new/refs/heads/main/data/daytrip_scatter.csv",
+  "format": {
+    "type": "csv",
+    "parse": {
+      "year": "number",
+      "trips": "number",
+      "expenditure": "number"
+    }
+  }
+    },
+    "width": "container",
+    "height": 250,
+  "layer": [
+    {
+      "encoding": {
+        "x": {
+          "field": "trips",
+          "type": "quantitative",
+          "title": "Daytrip Trips ('000)",
+          "scale": {"domain": [0, 90000]},
+          "axis": {"tickCount": 6, "format": ",.0f"}
+        },
+        "y": {
+          "field": "expenditure",
+          "type": "quantitative",
+          "title": "Expenditure ($M)",
+          "scale": {"domain": [0, 14000]},
+          "axis": {"tickCount": 6, "format": ",.0f"}
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "line",
+            "size": 3,
+            "color": "lightgray",
+            "strokeCap": "round"
+          },
+          "encoding": {
+            "detail": {"field": "state"},
+            "order": {"field": "year"},
+            "opacity": {
+              "condition": {
+                "test": {
+                  "or": [
+                    {"param": "hovered", "empty": false},
+                    {"param": "clicked", "empty": false}
+                  ]
+                },
+                "value": 0.8
+              },
+              "value": 0
+            }
+          }
+        },
+        {
+          "params": [
+            {
+                "name": "year",
+                "value": [{"year": 2019}],
+                "select": {
+                "type": "point",
+                "fields": ["year"]
+             },
+                 "bind": {
+                 "name": "Year",
+                 "input": "range",
+                 "min": 2019,
+                 "max": 2024,
+                 "step": 1
+        }
+},
+            {
+              "name": "hovered",
+              "select": {
+                "type": "point",
+                "fields": ["state"],
+                "toggle": false,
+                "on": "pointerover"
+              }
+            },
+            {
+              "name": "clicked",
+              "select": {"type": "point", "fields": ["state"]}
+            }
+          ],
+          "transform": [{"filter": {"param": "year"}}],
+          "mark": {"type": "circle", "size": 200, "opacity": 0.9},
+          "encoding": {
+            "color": {
+              "field": "state",
+              "type": "nominal",
+              "title": "state",
+              "scale": {
+                "domain": ["New South Wales", "Victoria", "Western Australia", "Northern Territory", "Tasmania"],
+                "range": ["#3F7EA6", "#54A1BF", "#BF69B1", "#F2790F", "#D93D3D"]
+              }
+            },
+            "tooltip": [
+              {"field": "state", "type": "nominal", "title": "State"},
+              {"field": "year", "type": "ordinal", "title": "Year"},
+              {"field": "trips", "type": "quantitative", "title": "Trips ('000)", "format": ",.0f"},
+              {"field": "expenditure", "type": "quantitative", "title": "Expenditure ($M)", "format": ",.2f"}
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": {
+                "and": [
+                  {"param": "year"},
+                  {
+                    "or": [
+                      {"param": "clicked", "empty": false},
+                      {"param": "hovered", "empty": false}
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "yOffset": 14,
+            "fontSize": 12,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "text": {"field": "state"},
+            "color": {"field": "state", "type": "nominal"}
+          }
+        },
+        {
+          "transform": [
+            {"filter": {"param": "hovered", "empty": false}},
+            {"filter": {"not": {"param": "year"}}}
+          ],
+          "layer": [
+            {
+              "mark": {
+                "type": "text",
+                "yOffset": -10,
+                "fontSize": 11,
+                "color": "gray"
+              },
+              "encoding": {"text": {"field": "year"}}
+            },
+            {"mark": {"type": "circle", "color": "gray", "size": 80}}
+          ]
+        }
+      ]
+    }
+  ]
+}
